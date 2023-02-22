@@ -1,17 +1,20 @@
 package exercise3;
 
 
-interface AreaCal {
+interface AreaCal 
+{
     double getarea();
     double getperimeter();
 }
 
-interface CalcVolume {
+interface CalcVolume
+{
     double getsurfacegetarea();
     double getvolume();
 }
 
-class Circle implements AreaCal {
+class Circle implements AreaCal 
+{
     private double radius;
     private final double pi = Math.PI;
     
@@ -28,7 +31,8 @@ class Circle implements AreaCal {
     }
 }
 
-class Square implements AreaCal {
+class Square implements AreaCal
+{
     private double side;
     
     Square(double side) {
@@ -44,7 +48,8 @@ class Square implements AreaCal {
     }
 }
 
-class Triangle implements AreaCal {
+class Triangle implements AreaCal 
+{
     private double a;
     private double b;
     private double c;
@@ -65,7 +70,8 @@ class Triangle implements AreaCal {
     }
 }
 
-class Sphere implements AreaCal, CalcVolume {
+class Sphere implements AreaCal, CalcVolume 
+{
     private double radius;
     private final double pi = Math.PI;
     
@@ -92,7 +98,8 @@ class Sphere implements AreaCal, CalcVolume {
 	
 }
 
-class Cuboid implements AreaCal, CalcVolume {
+class Cuboid implements AreaCal, CalcVolume
+{
     private double side;
     
     Cuboid(double side) {
@@ -116,8 +123,10 @@ class Cuboid implements AreaCal, CalcVolume {
     }
 }
 
-public class exp2 {
-    public static void main(String[] args) {
+public class exp2 
+{
+    public static void main(String[] args) 
+    {
         Circle c = new Circle(15.0);
         System.out.println("Circle area: " + c.getarea());
         System.out.println("Circle perimeter: " + c.getperimeter());

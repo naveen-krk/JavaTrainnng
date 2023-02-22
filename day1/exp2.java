@@ -1,22 +1,18 @@
 package exercisee;
 
 public class exp2 {
-	
 	public static void main(String[] args) {
-		Printdefaultvalues df=new Printdefaultvalues();
-		df.Printvalues();
+		PrintDefaultValues df=new PrintDefaultValues();
+		df.PrintDefaultValue();
 	}
 }
-class Printdefaultvalues{
-	static int a;
-	static float b;
-	static String c;
-	void Printvalues() {
+class PrintDefaultValues{
+	 int a;
+	 float b;
+	 String c;
+     public void PrintDefaultValue() {
 	System.out.println(a);
 	System.out.println(b);
 	System.out.println(c);
-	}
-	
-	
-	
+	}	
 }

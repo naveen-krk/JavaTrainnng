@@ -1,22 +1,26 @@
 package exercise3;
 
 
-interface Stack {
+interface Stack 
+{
     void push(int data);
     int pop();
 }
 
-class FixedStack implements Stack {
+class FixedStack implements Stack 
+{
     int[] stack;
     int top = -1;
     int size;
 
-    public FixedStack(int size) {
+    public FixedStack(int size)
+    {
         this.size = size;
         stack = new int[size];
     }
 
-    public void push(int data) {
+    public void push(int data) 
+    {
         if (top == size - 1) {
             System.out.println("Stack is full");
         } else {

@@ -5,7 +5,7 @@ public class exp1 {
 	static char c='s';
 	public static void main(String[] args) {
 		System.out.println("int :"+a +"  char:"+c);
-		check ch=new check();
+		Check ch=new Check();
 		ch.primitive(a,c);
 		System.out.println("int :"+a +"  char:"+c);
 		System.out.println(ch.str);
@@ -16,24 +16,19 @@ public class exp1 {
 		ch.array(arr);
 		System.out.println(arr[0]);
 	}
-
 }
-class check{
+class Check{
+	String str="naveen";
 	static void primitive(int a,char s){
 		a=12;
 		s='x';
-	
 		System.out.println("int :"+a +"  char:"+s);		
 	}
  public void array(int[] arr) {
-		
 		arr[0]=5;
 	}
-String str="naveen";
-	static void object(check ch){
+	static void object(Check ch){
 		ch.str="karthik";
-		
 		System.out.println(ch.str);		
 	}
-	
 }
