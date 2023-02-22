@@ -1,17 +1,17 @@
 package exercise3;
 
 
-interface CalcArea {
-    double area();
-    double perimeter();
+interface AreaCal {
+    double getarea();
+    double getperimeter();
 }
 
 interface CalcVolume {
-    double surfaceArea();
-    double volume();
+    double getsurfacegetarea();
+    double getvolume();
 }
 
-class Circle implements CalcArea {
+class Circle implements AreaCal {
     private double radius;
     private final double pi = Math.PI;
     
@@ -19,32 +19,32 @@ class Circle implements CalcArea {
         this.radius = radius;
     }
     
-    public double area() {
+    public double getarea() {
         return pi * radius * radius;
     }
     
-    public double perimeter() {
+    public double getperimeter() {
         return 2 * pi * radius;
     }
 }
 
-class Square implements CalcArea {
+class Square implements AreaCal {
     private double side;
     
     Square(double side) {
         this.side = side;
     }
     
-    public double area() {
+    public double getarea() {
         return side * side;
     }
     
-    public double perimeter() {
+    public double getperimeter() {
         return 4 * side;
     }
 }
 
-class Triangle implements CalcArea {
+class Triangle implements AreaCal {
     private double a;
     private double b;
     private double c;
@@ -55,17 +55,17 @@ class Triangle implements CalcArea {
         this.c = c;
     }
     
-    public double area() {
+    public double getarea() {
         double s = (a + b + c) / 2;
         return Math.sqrt(s * (s - a) * (s - b) * (s - c));
     }
     
-    public double perimeter() {
+    public double getperimeter() {
         return a + b + c;
     }
 }
 
-class Sphere implements CalcArea, CalcVolume {
+class Sphere implements AreaCal, CalcVolume {
     private double radius;
     private final double pi = Math.PI;
     
@@ -73,43 +73,45 @@ class Sphere implements CalcArea, CalcVolume {
         this.radius = radius;
     }
     
-    public double area() {
+    public double getarea() {
         return 4 * pi * radius * radius;
     }
     
-    public double perimeter() {
+    public double getperimeter() {
         return 2 * pi * radius;
     }
     
-    public double surfaceArea() {
+    public double getsurfacegetarea() {
         return 4 * pi * radius * radius;
     }
     
-    public double volume() {
+    public double getvolume() {
         return (4/3) * pi * radius * radius * radius;
     }
+
+	
 }
 
-class Cuboid implements CalcArea, CalcVolume {
+class Cuboid implements AreaCal, CalcVolume {
     private double side;
     
     Cuboid(double side) {
         this.side = side;
     }
     
-    public double area() {
+    public double getarea() {
         return side * side;
     }
     
-    public double perimeter() {
+    public double getperimeter() {
         return 4 * side;
     }
     
-    public double surfaceArea() {
+    public double getsurfacegetarea() {
         return 6 * side * side;
     }
     
-    public double volume() {
+    public double getvolume() {
         return side * side * side;
     }
 }
@@ -117,27 +119,27 @@ class Cuboid implements CalcArea, CalcVolume {
 public class exp2 {
     public static void main(String[] args) {
         Circle c = new Circle(15.0);
-        System.out.println("Circle area: " + c.area());
-        System.out.println("Circle perimeter: " + c.perimeter());
+        System.out.println("Circle area: " + c.getarea());
+        System.out.println("Circle perimeter: " + c.getperimeter());
         
         Square s = new Square(10.0);
-        System.out.println("Square area: " + s.area());
-        System.out.println("Square perimeter: " + s.perimeter());
+        System.out.println("Square area: " + s.getarea());
+        System.out.println("Square perimeter: " + s.getperimeter());
         
         Triangle t = new Triangle(4.0, 6.0, 5.0);
-        System.out.println("Triangle area: " + t.area());
-        System.out.println("Triangle perimeter: " + t.perimeter());
+        System.out.println("Triangle area: " + t.getarea());
+        System.out.println("Triangle perimeter: " + t.getperimeter());
         
         Sphere sp = new Sphere(7.0);
-        System.out.println("Sphere area: " + sp.area());
-        System.out.println("Sphere perimeter: " + sp.perimeter());
-        System.out.println("Sphere surface area: " + sp.surfaceArea());
-        System.out.println("Sphere volume: " + sp.volume());
+        System.out.println("Sphere area: " + sp.getarea());
+        System.out.println("Sphere perimeter: " + sp.getperimeter());
+        System.out.println("Sphere surface area: " + sp.getsurfacegetarea());
+        System.out.println("Sphere volume: " + sp.getvolume());
 
         Cuboid cu = new Cuboid(12.0);
-        System.out.println("Cuboid area: " + cu.area());
-        System.out.println("Cuboid perimeter: " + cu.perimeter());
-        System.out.println("Cuboid surface area: " + cu.surfaceArea());
-        System.out.println("Cuboid volume: " + cu.volume());
+        System.out.println("Cuboid area: " + cu.getarea());
+        System.out.println("Cuboid perimeter: " + cu.getperimeter());
+        System.out.println("Cuboid surface area: " + cu.getsurfacegetarea());
+        System.out.println("Cuboid volume: " + cu.getvolume());
     }
 }
