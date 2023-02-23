@@ -1,25 +1,20 @@
 package exercise2;
-
 class Student {
     String name;
     int rollNo;
-
     Student() {
         name = "null";
         rollNo = 1;
     }
-
     public void setDetails(String name, int rollNo) {
         this.name = name;
         this.rollNo = rollNo;
     }
 }
-
 class Exam extends Student {
     int m1;
     int m2;
     int m3;
-
     public void setMarks(int m1, int m2, int m3) {
         this.m1 = m1;
         this.m2 = m2;
@@ -33,7 +28,6 @@ class Result extends Exam {
         return res;
     }
 }
-
 public class exp14 {
     public static void main(String[] args) {
         Result ex = new Result();

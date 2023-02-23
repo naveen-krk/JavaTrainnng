@@ -12,15 +12,15 @@ public class exp15 {
 }
 	static void display(int x) {
 		int flag=0;
-		if(CheckList.Armcheck(x)==1) {
+		if(CheckList.armCheck(x)==1) {
 			System.out.println("Its an Armstrong Number");
 			flag=1;
 		}
-		if(CheckList.Perfectcheck(x)==1) {
+		if(CheckList.perfectCheck(x)==1) {
 			System.out.println("Its an Perfect Number");
 			flag=1;
 		}
-		if(CheckList.Palincheck(x)==1) {
+		if(CheckList.palinCheck(x)==1) {
 			System.out.println("Its an Palindrome Number");
 			flag=1;
 		}
@@ -31,7 +31,7 @@ public class exp15 {
 	}
 	
 class CheckList{
-	public static int Armcheck(int x) {
+	public static int armCheck(int x) {
 		int sum=0;
 		int c=x;
 		int length=length(x);
@@ -58,7 +58,7 @@ class CheckList{
 		return count;
 	}
 	
-		static int Perfectcheck(int x) {
+		static int perfectCheck(int x) {
 			int count=0;
 			for(int i=1;i<x;i++)
 				if(x%i==0)
@@ -68,7 +68,7 @@ class CheckList{
 		else 
 			return 0;		
 	}
-	static int Palincheck(int x) {
+	static int palinCheck(int x) {
 			int r,sum=0,temp;    
 			  int n=x;   
 			  temp=n;    
