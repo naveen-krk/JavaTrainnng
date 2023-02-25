@@ -9,15 +9,15 @@ public class DigitalClock {
         int minute = LocalDateTime.now().getMinute();
         int second = LocalDateTime.now().getSecond();
         DisplayTime c = new DisplayTime(hour, minute, second);
-        es.execute(() - > {
+        es.execute(() -> {
             while (true)
                 c.sec();
         });
-        es.execute(() - > {
+        es.execute(() -> {
             while (true)
                 c.min();
         });
-        es.execute(() - > {
+        es.execute(() -> {
             while (true)
                 c.hrs();
         });
