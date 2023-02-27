@@ -9,9 +9,3 @@ public class ThreadStart {
         //can not be started again.
     }
 }
-class CreateThread implements Runnable {
-    @Override
-    public void run() {
-        System.out.println("Thread name is" + Thread.currentThread());
-    }
-}
