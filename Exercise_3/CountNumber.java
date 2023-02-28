@@ -15,7 +15,7 @@ public static void main(String[] args) {
 		}
 	});
 	es.execute(()->{
-		try {
+		try {while(true)
 			number.mul();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -25,8 +25,10 @@ public static void main(String[] args) {
 }
 synchronized void num() throws InterruptedException {
 	for(int i=1;i<=100;i++) {
-		if(i%10!=0)	
+		if(i%10!=0)	{
 			System.out.println(i);
+			 Thread.sleep(1000);
+		}
 		else {
 			notify();
 			wait();
@@ -35,6 +37,7 @@ synchronized void num() throws InterruptedException {
 	}
 synchronized void mul() throws InterruptedException {	
 System.out.println("Multiple of 10");
+Thread.sleep(1000);
 notify();
 wait();
 }
