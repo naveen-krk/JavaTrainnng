@@ -1,0 +1,4 @@
+Count Numbers of words in the file
+hi
+hello
+java
