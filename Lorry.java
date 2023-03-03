@@ -49,7 +49,7 @@ class DisplayTime {
       int dayI = newDate.getDayOfMonth();
       Month months = newDate.getMonth();
       int month = months.getValue();
-      if (dayOfWeek == 1 || (month == 1 && dayI == 26) || (month == 1 && dayI == 1) || (month == 8 && dayI == 15)) {
+      if (dayOfWeek == 1 || (month == 1 && dayI == 26) || (month == 1 && dayI == 1) || (month == 8 && dayI == 15) || (dayOfWeek == 1 && dayI>7 &&dayI<=14)) {
         i++;
       }
       else {
