@@ -16,7 +16,6 @@ public class Lorry {
 		new DisplayTime(speed, distance);
 	}
 }
-
 class DisplayTime {
 	static int speed, distance, dayDistance, totalDistance = 0;
 
@@ -35,8 +34,14 @@ class DisplayTime {
 		if (distance < speed) {
 			System.out.print(LocalDate.now() + " ");
 			int hour = LocalDateTime.now().getHour();
-			float remainingTime = ((distance) / (float) speed);
-			remainingTime = (remainingTime * 60 / 100)+hour;
+			int minute=LocalDateTime.now().getMinute();
+			float remainingMinute = ((distance) / (float) speed);
+			remainingMinute = ((remainingMinute) * 60)+minute;
+			if(remainingMinute>60) {
+				hour++;
+				remainingMinute =remainingMinute-60;
+			}
+			float remainingTime =(remainingMinute/100)+hour;
 			System.out.printf("%.2f hrs", remainingTime);
 			return;
 		}
