@@ -25,24 +25,26 @@ class DisplayTime {
 		dayDistance = calDistance(speed);
 		calTime();
 	}
-
+	//calculate distance travelled per day(8hrs)
 	private int calDistance(int speed) {
 		return speed * 8;
 	}
-
 	void calTime() {
+		// base condition:if the distance is less then the speed 
 		if (distance < speed) {
 			System.out.print(LocalDate.now() + " ");
 			int hour = LocalDateTime.now().getHour();
 			int minute=LocalDateTime.now().getMinute();
 			float remainingMinute = ((distance) / (float) speed);
 			remainingMinute = ((remainingMinute) * 60)+minute;
-			if(remainingMinute>60) {
+			
+			if(remainingMinute>=60) {
 				hour++;
 				remainingMinute =remainingMinute-60;
 			}
-			float remainingTime =(remainingMinute/100)+hour;
-			System.out.printf("%.2f hrs", remainingTime);
+			
+			float remainingTime =(remainingMinute);
+			System.out.printf("%d:%.2f hrs",hour, remainingTime);
 			return;
 		}
 		int hour = LocalDateTime.now().getHour();
@@ -73,11 +75,11 @@ class DisplayTime {
 				i++;
 			}
 		}
-		float remainingTime = ((distance - totalDistance) / (float) speed);
-		int x = (int) remainingTime;
-		float minutes = remainingTime - x;
-		remainingTime = (minutes * 60 / 100) + x;
+		float remainingTime = ((float)(distance - totalDistance) / speed);
+		int Hour = (int) remainingTime;
+	     float minutes = remainingTime - Hour;
+		remainingTime = (minutes * 60 );
 		System.out.print(localDate.plusDays(i) + " ");
-		System.out.printf("%.2f hrs", remainingTime);
+		System.out.printf("%d:%d hrs",Hour,(int)remainingTime);
 	}
 }
