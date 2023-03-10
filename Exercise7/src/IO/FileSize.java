@@ -8,6 +8,7 @@ public class FileSize {
 			File file = new File("String.txt");
 			System.out.println(file.length());
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }
