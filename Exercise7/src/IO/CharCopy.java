@@ -9,44 +9,32 @@ import java.io.IOException;
 public class CharCopy {
 	public static void main(String[] args){
 		File source = new File("source.txt");
-		try {
-			source.createNewFile();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		File destination = new File("outputFile.txt");
+		FileOutputStream outputStream = null;
 		FileInputStream inputStream = null;
 		try {
+			source.createNewFile();
+			File destination = new File("outputFile.txt");
 			inputStream = new FileInputStream(source);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		FileOutputStream outputStream = null;
-		try {
 			outputStream = new FileOutputStream(destination);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		int length = (int) source.length();
-		byte[] buffer = new byte[length];
-		try {
+			int length = (int) source.length();
+			byte[] buffer = new byte[length];
 			while ((length = inputStream.read(buffer)) > 0) {
 				outputStream.write(buffer, 0, length);
 			}
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		try {
-			inputStream.close();
-			outputStream.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("File copied.....");
+		finally {
+			try {
+				inputStream.close();
+				outputStream.close();
+				System.out.println("File copied.....");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
 	}
 }
